@@ -18,48 +18,53 @@ body {
   align-items: center;
   justify-content: center;
   background: url(../images/fondo.jpg) no-repeat center;
+  background-size: cover;
 }
 
-.profile-img {
-  width: 35rem;
-  clip-path: polygon(
-    50% 0%,
-    80% 10%,
-    100% 35%,
-    100% 70%,
-    80% 90%,
-    50% 100%,
-    20% 90%,
-    0% 70%,
-    0% 35%,
-    20% 10%
-  );
+.profile {
+  margin: auto;
+  &-img {
+    width: 35rem;
+    clip-path: polygon(
+      50% 0%,
+      80% 10%,
+      100% 35%,
+      100% 70%,
+      80% 90%,
+      50% 100%,
+      20% 90%,
+      0% 70%,
+      0% 35%,
+      20% 10%
+    );
+  }
+  &-title {
+    text-align: center;
+    font-family: "Tilt Prism", cursive;
+    font-size: 3rem;
+    color: yellow;
+    text-decoration: underline;
+  }
+  &-text {
+    padding: 1rem 0;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.5rem;
+    text-align: justify;
+  }
+  &-knowledge {
+    font-family: "Tilt Prism", cursive;
+    color: red;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    font-size: 3rem;
+    margin: 0.5rem;
+    text-decoration: underline;
+  }
 }
 
-.profile-title {
-  text-align: center;
-  font-family: "Tilt Prism", cursive;
-  font-size: 5rem;
-  color: yellow;
-  text-decoration: underline;
-}
-
-.profile-text {
-  padding: 0.5rem;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 1.5rem;
-}
-
-.profile-knowledge {
-  font-family: "Tilt Prism", cursive;
-  color: yellow;
-  font-weight:bold;
-  letter-spacing: 0.5rem;
-  font-size: 3rem;
-}
 .knowledge-icon {
   padding: 0.1rem;
-  margin: 1rem 0.5rem;
+  margin: 1.5rem 0.5rem;
   width: 5rem;
   max-width: 100%;
   cursor: pointer;
@@ -67,7 +72,7 @@ body {
 }
 
 .knowledge-icon:hover {
-  transform: scale(1.2, 1.2);
+  transform: scale(1.2);
   border: 5px solid yellow;
   padding: 0.5rem;
 }
@@ -80,17 +85,18 @@ body {
   align-items: center;
   font-size: 1.5rem;
   font-family: "Tilt Prism", cursive;
-  color: yellow;
-  font-weight:bold;
+  color: red;
+  font-weight: bold;
   letter-spacing: 0.2rem;
+  margin: 1rem 0;
   &-icon {
-    width: 3rem;
-    padding: 0 0.5rem;
+    width: 4rem;
+    margin: 0 1rem;
   }
 }
 
 .flip-horizontal-fwd {
-  animation: flip-horizontal-fwd 0.5s ease-in-out forwards;
+  animation: flip-horizontal-fwd 2s ease-in-out forwards;
 }
 
 @keyframes flip-horizontal-fwd {
@@ -98,6 +104,32 @@ body {
     transform: translateZ(0) rotateX(0);
   }
   100% {
-    transform: translateZ(160px) rotateX(360deg);
+    transform: translateZ(160px) rotateY(360deg);
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-img {
+    width: 75%;
+  }
+
+  .profile-title {
+    font-size: 3rem;
+  }
+
+  .profile-text {
+    font-size: 1.5rem;
+  }
+
+  .profile-knowledge {
+    font-size: 1.5rem;
+    &-icons {
+      text-align: center;
+    }
+  }
+
+  .social {
+    font-size: 1rem;
+    color: red;
   }
 }
